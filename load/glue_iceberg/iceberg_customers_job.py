@@ -1,17 +1,14 @@
 import sys
 from awsglue.transforms import *
-from awsglue.utils import getResolvedOptions
-from pyspark.context import SparkContext
-from awsglue.context import GlueContext
-from awsglue.job import Job
+from awsglue.utils import getresolvedoptions
+from awsglue.context import gluecontext
+from awsglue.job import job
+from awsglue.dynamicframe import dynamicframe
 
-from pyspark.sql.functions import *
-from awsglue.dynamicframe import DynamicFrame
-
-from pyspark.sql.window import Window
+from pyspark.sql.window import window
 from pyspark.sql.functions import rank, max
-
-from pyspark.conf import SparkConf
+from pyspark.conf import sparkconf
+from pyspark.context import sparkcontext
 
 args = getResolvedOptions(sys.argv, ['JOB_NAME', 'iceberg_job_catalog_warehouse'])
 conf = SparkConf()
